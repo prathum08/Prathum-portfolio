@@ -2,6 +2,7 @@ import './App.css';
 import { LoadingScreen } from './components/LoadingScreen';
 import { useEffect, useState } from "react";
 import { Navbar } from './components/Navbar';
+import { MobileMenu } from './components/MobileMenu';
 import "./index.css";
 
 function App() {
