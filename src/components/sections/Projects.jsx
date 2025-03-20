@@ -61,7 +61,7 @@ export const Projects = () => {
               A simple expense tracker to manage and visualize daily spending
               efficiently.
             </p>
-            <div>
+            <div className="flex flex-wrap gap-2 mb-4">
               {["HTML", "CSS", "Javascript", "Graph Visualizer"].map(
                 (tech, key) => (
                   <span
@@ -84,7 +84,7 @@ export const Projects = () => {
               A simple expense tracker to manage and visualize daily spending
               efficiently.
             </p>
-            <div>
+            <div className="flex flex-wrap gap-2 mb-4">
               {["HTML", "CSS", "Javascript", "Graph Visualizer"].map(
                 (tech, key) => (
                   <span
