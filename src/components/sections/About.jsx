@@ -70,12 +70,12 @@ export const About = () => {
                 <h3 className="text-xl font-bolf mb-4">🏢Work Experience</h3>
                 <div className="space-y-4 text-gray-300">
                     <div>
-                        <h4 className="font-semibold">Software Engineer at ABC (2020 - 2021)</h4>
-                        <p>Developed a Software</p>
+                        <h4 className="font-semibold">Freaking Minds</h4>
+                        <p>Content Writing and Digital Marketing (2022 - 2023)</p>
                     </div>
                     <div>
-                        <h4 className="font-semibold">Software Engineer at ABC (2020 - 2021)</h4>
-                        <p>Developed a Software</p>
+                        <h4 className="font-semibold">Team Lead in Project Exhibition</h4>
+                        <p>Worked and Developed a Hostel Accomodation Website</p>
                     </div>
                 </div>
                 </div>
