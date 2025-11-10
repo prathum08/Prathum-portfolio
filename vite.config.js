@@ -7,5 +7,5 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-  base:"Prathum-portfolio",
+  base: "/", // Changed from "Prathum-portfolio" for Vercel deployment
 })
