@@ -137,7 +137,7 @@ export const Home = () => {
           className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
         >
           <motion.a
-            href="/Prathum-portfolio/resume.pdf"
+            href="/resume.pdf"
             download="Prathum_Bhangadia.pdf"
             className="group relative bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-4 px-8 rounded-full font-medium overflow-hidden"
             whileHover={{ scale: 1.05 }}
