@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage":"https://prathum08.github.io/Prathum-portfolio",
+  "homepage": "https://prathum08.github.io/Prathum-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,14 +10,21 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy":"gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.13",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.553.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.13"
+    "react-tsparticles": "^2.12.2",
+    "react-type-animation": "^3.2.0",
+    "tailwindcss": "^4.0.13",
+    "tsparticles": "^3.8.1",
+    "tsparticles-slim": "^2.12.0",
+    "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
