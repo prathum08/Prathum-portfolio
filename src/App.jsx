@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { MobileMenu } from './components/MobileMenu';
 import { Home } from './components/sections/Home';
 import { About } from './components/sections/About';
+import { Skills } from './components/sections/Skills';
 import { Projects } from './components/sections/Projects';
 import { Contact } from './components/sections/Contact';
 import { ParticlesBackground } from './components/ParticlesBackground';
@@ -14,10 +15,16 @@ import "./index.css";
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [playMusic, setPlayMusic] = useState(false);
+
+  const handleLoadingComplete = (shouldPlayMusic) => {
+    setPlayMusic(shouldPlayMusic);
+    setIsLoaded(true);
+  };
 
   return (
     <>
-      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
+      {!isLoaded && <LoadingScreen onComplete={handleLoadingComplete} />}
       
       <div
         className={`min-h-screen transition-opacity duration-700 ${
@@ -28,7 +35,7 @@ function App() {
         <ParticlesBackground />
 
         {/* Background Music Player */}
-        <BackgroundMusic />
+        <BackgroundMusic shouldAutoPlay={playMusic} />
 
         {/* Main Content */}
         <div className="relative z-10">
@@ -36,6 +43,7 @@ function App() {
           <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           <Home />
           <About />
+          <Skills />
           <Projects />
           <Contact />
         </div>

@@ -111,6 +111,12 @@ export const Home = () => {
               2000,
               "Tech Enthusiast",
               2000,
+              "Cinephile",
+              2000,
+              "Sports Enthusiast",
+              2000,
+              "Musician",
+              2000,
             ]}
             wrapper="span"
             speed={50}
@@ -123,9 +129,7 @@ export const Home = () => {
           variants={itemVariants}
           className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          I'm a full-stack developer who loves crafting clean, scalable web
-          applications. My goal is to build solutions that offer both exceptional
-          performance and a delightful user experience.
+          I build full-stack web applications that are clean, scalable, and crafted with performance in mind. My work blends solid engineering with thoughtful design to create digital experiences that feel effortless for users.
         </motion.p>
 
         <motion.div
@@ -133,12 +137,13 @@ export const Home = () => {
           className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
         >
           <motion.a
-            href="#projects"
+            href="/Prathum-portfolio/resume.pdf"
+            download="Prathum_Bhangadia.pdf"
             className="group relative bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-4 px-8 rounded-full font-medium overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="relative z-10">View Projects</span>
+            <span className="relative z-10">Download Resume</span>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500"
               initial={{ x: "100%" }}

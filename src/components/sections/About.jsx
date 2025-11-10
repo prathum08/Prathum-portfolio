@@ -113,13 +113,12 @@ export const About = () => {
           className="rounded-2xl p-8 border border-blue-500/20 hover:border-blue-500/40 transition-all backdrop-blur-sm bg-gradient-to-br from-blue-500/5 to-purple-500/5 mb-8"
         >
           <p className="text-gray-300 text-lg leading-relaxed">
-            Passionate developer with expertise in building scalable web
-            applications and creating innovative solutions.
+            I'm a developer with a strong academic background, a passion for machine learning, and an active interest in sports. When I’m not building projects, you'll find me exploring new hobbies, staying active, and learning how technology can solve real-world problems.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <motion.div
+          {/* <motion.div
             variants={itemVariants}
             ref={tiltRef2}
             className="rounded-2xl p-8 backdrop-blur-sm bg-gradient-to-br from-blue-500/10 to-cyan-500/5 border border-blue-500/20 hover:border-blue-500/40 transition-all"
@@ -146,9 +145,9 @@ export const About = () => {
                 </motion.span>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
-          <motion.div
+          {/* <motion.div
             variants={itemVariants}
             ref={tiltRef3}
             className="rounded-2xl p-8 backdrop-blur-sm bg-gradient-to-br from-purple-500/10 to-pink-500/5 border border-purple-500/20 hover:border-purple-500/40 transition-all"
@@ -175,13 +174,13 @@ export const About = () => {
                 </motion.span>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
             variants={itemVariants}
-            ref={tiltRef4}
+            ref={tiltRef2}
             className="p-8 rounded-2xl backdrop-blur-sm bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/20 hover:border-cyan-500/40 transition-all"
           >
             <div className="flex items-center gap-3 mb-6">

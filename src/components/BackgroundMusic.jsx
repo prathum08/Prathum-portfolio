@@ -2,14 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX, Play, Pause, Music } from "lucide-react";
 
-export const BackgroundMusic = () => {
+export const BackgroundMusic = ({ shouldAutoPlay = false }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(0.3); // Default 30% volume
   const [showControls, setShowControls] = useState(false);
   const audioRef = useRef(null);
 
-  // Auto-play on component mount (with user interaction fallback)
+  // Handle auto-play based on user preference
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -17,25 +17,27 @@ export const BackgroundMusic = () => {
     audio.volume = volume;
     audio.loop = true;
 
-    // Try to autoplay
-    const playPromise = audio.play();
-    
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          setIsPlaying(true);
-        })
-        .catch((error) => {
-          // Autoplay was prevented - this is normal and expected
-          // Show controls to let user start manually
-          if (error.name === 'NotAllowedError') {
-            // Silently handle - this is expected browser behavior
-            setShowControls(true);
-          } else {
-            // Log other unexpected errors
-            console.error("Unexpected audio error:", error);
-          }
-        });
+    // Only try to play if user said yes
+    if (shouldAutoPlay) {
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((error) => {
+            // Autoplay was prevented - this is normal and expected
+            // Show controls to let user start manually
+            if (error.name === 'NotAllowedError') {
+              // Silently handle - this is expected browser behavior
+              setShowControls(true);
+            } else {
+              // Log other unexpected errors
+              console.error("Unexpected audio error:", error);
+            }
+          });
+      }
     }
 
     // Cleanup
@@ -44,7 +46,7 @@ export const BackgroundMusic = () => {
         audio.pause();
       }
     };
-  }, []);
+  }, [shouldAutoPlay]);
 
   // Handle volume changes
   useEffect(() => {

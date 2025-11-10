@@ -175,20 +175,20 @@ export const Projects = () => {
                     {project.title}
                   </motion.h3>
                   <div className="flex gap-2">
-                    <motion.button
+                    {/* <motion.button
                       className="p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <Github size={20} className="text-gray-400 hover:text-white transition-colors" />
-                    </motion.button>
-                    <motion.button
+                    </motion.button> */}
+                    {/* <motion.button
                       className="p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all"
                       whileHover={{ scale: 1.1, rotate: -5 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <ExternalLink size={20} className="text-gray-400 hover:text-white transition-colors" />
-                    </motion.button>
+                    </motion.button> */}
                   </div>
                 </div>
 

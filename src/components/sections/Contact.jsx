@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Send } from "lucide-react";
 import { useState } from "react";
+import emailjs from "emailjs-com";
+
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,16 +12,35 @@ export const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Add your email service logic here (EmailJS, etc.)
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
-    }, 2000);
-  };
+ 
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    await emailjs.send(
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      import.meta.env.VITE_PUBLIC_KEY
+    );
+
+    alert("Message sent successfully!");
+    setFormData({ name: "", email: "", message: "" });
+
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    alert("Failed to send message. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -53,15 +74,15 @@ export const Contact = () => {
     {
       icon: <Linkedin size={24} />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/prathum-bhangadia",
+      href: "https://www.linkedin.com/in/prathum-bhangadia-60b747250",
       color: "from-blue-500 to-blue-700",
     },
-    {
-      icon: <Mail size={24} />,
-      label: "Email",
-      href: "mailto:prathum@example.com",
-      color: "from-red-500 to-pink-500",
-    },
+    // {
+    //   icon: <Phone size={24} />,
+    //   label: "Email : prathumbhangadia84@gmail.com",
+    //   // href: "mailto:prathumbhangadia84@gmail.com",
+    //   color: "from-red-500 to-pink-500",
+    // },
   ];
 
   return (
@@ -258,7 +279,7 @@ export const Contact = () => {
           className="text-center mt-20 pt-8 border-t border-white/10"
         >
           <p className="text-gray-400">
-            © 2025 Prathum Bhangadia. Built with React & Framer Motion
+            Made with 💗 by Prathum
           </p>
         </motion.div>
       </motion.div>
