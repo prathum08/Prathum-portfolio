@@ -102,7 +102,7 @@ export const BackgroundMusic = ({ shouldAutoPlay = false }) => {
           
           For now, using a placeholder - you MUST replace this!
         */}
-        <source src="/Prathum-portfolio/music/background-music.mp3" type="audio/mpeg" />
+        <source src="/music/background-music.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
 
